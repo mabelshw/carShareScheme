@@ -1,0 +1,16 @@
+<agm-map [latitude]="latMap" [longitude]="lngMap" [zoom]="14">
+  <agm-marker *ngFor="let car of cars" [latitude]="car.lat" [longitude]="car.lng" [label]="car.name" [markerClickable]="true" (markerClick)="showInfo($event)">
+      <agm-info-window [disableAutoPan]="true">
+        <div class="info-window-container">
+          <div>
+              <img [src]="car.imgUrl" alt="">
+          </div>
+          <div class="info-window-container_desc">
+            <p>name: {{car.name}}</p>
+            <button attr.data-id="{{car.id}}" (click)="book($event)">book</button>
+          </div>
+        </div>  
+      </agm-info-window>
+  </agm-marker>
+  <agm-circle [latitude]="latUser" [longitude]="lngUser" [radius]="60" [fillColor]="'Blue'" [fillOpacity]="1.0"></agm-circle>
+</agm-map>

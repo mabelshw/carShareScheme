@@ -1,0 +1,9 @@
+agm-map {
+  height: 500px;
+}
+.info-window-container {
+  display: flex;
+}
+.info-window-container img {
+  width: 200px;
+}
