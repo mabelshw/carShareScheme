@@ -1,0 +1,26 @@
+<label>Login</label>
+<form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <div class="username">
+      <label>
+        Username: 
+        <input type="type" formControlName="username" required>
+      </label>
+    </div>
+    
+    <div>
+      <label>
+        Password:
+        <input type="text" formControlName="password" required>
+      </label>
+    </div>
+
+  </div>
+</form>
+
+<button type="submit">Login</button>
+
+<p>
+    Form Status: {{ loginForm.status }}
+</p>
+  
