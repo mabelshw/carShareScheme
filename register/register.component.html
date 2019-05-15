@@ -1,0 +1,72 @@
+
+<body>
+  <label>Register</label>
+  <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <div class="firstName">
+        <label>
+          First Name:
+          <input type="type" formControlName="firstName" required>
+        </label>
+      </div>
+
+      <div class="lastName">
+        <label>
+          Last Name:
+          <input type="type" formControlName="lastName" required>
+        </label>
+      </div>
+
+      <div class="dob">
+        <label>
+          Date of Birth:
+          <div>
+            <input matInput [matDatepicker]="myDatepicker" placeholder="Choose a date">
+            <mat-datepicker-toggle [for]="myDatepicker"></mat-datepicker-toggle>
+            <mat-datepicker #myDatepicker></mat-datepicker>
+          </div>
+        </label>
+      </div>
+
+      <div class="email">
+        <label>
+          Email:
+          <input type="type" formControlName="email" ngModel email="true" required>
+        </label>
+      </div>
+
+      <div>
+        <label>
+          Password:
+          <input type="text" formControlName="password" required>
+        </label>
+      </div>
+
+      <div class="phoneNo">
+        <label>
+          Phone Number:
+          <input type="type" formControlName="phoneNo" required>
+        </label>
+      </div>
+
+      <div class="licenseNo">
+        <label>
+          License Number:
+          <input type="type" formControlName="licenseNo" required>
+        </label>
+      </div>
+
+
+    </div>
+  </form>
+
+  <button class="submitButton" type="submit">Submit</button>
+
+  <button class="cancelButton" routerLink="/login">Cancel</button>
+
+  <p>
+    Form Status: {{ registerForm.status }}
+  </p>
+
+</body>
